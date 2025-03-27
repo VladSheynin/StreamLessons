@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Stream3 {
 
@@ -8,8 +7,10 @@ public class Stream3 {
     // имя, начинающееся на "A" (используйте `findFirst`).
     public static void main(String[] args) {
         List<String> names = List.of("John", "Alice", "Bob");
-    //    String nameStartA = names.stream().flatMap((s) -> s.chars().mapToObj(c -> (char) c)).
-    //            filter((ch) -> ch.equals('A')).findAny();
-
+        String nameStartA = names.stream()
+                .filter(a -> a.contains("A"))
+                .findFirst()
+                .orElse("нет такого слова");
+        System.out.println(nameStartA);
     }
 }
