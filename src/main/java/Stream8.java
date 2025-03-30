@@ -25,6 +25,6 @@ public class Stream8 {
 
         System.out.println(result);
 
-        System.out.println(Arrays.stream(words).filter((word)-> word.length()>3).map(w->w.toUpperCase()).toList());
+        System.out.println(Arrays.stream(words).filter((word)-> word.length()>3).map(String::toUpperCase).toList());
     }
 }

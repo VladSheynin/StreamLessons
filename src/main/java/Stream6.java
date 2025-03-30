@@ -18,7 +18,7 @@ public class Stream6 {
         List<Person> people = List.of(new Person("Alice", 25), new Person("Bob", 30), new Person("Charlie", 20));
 
         List<Person> people21Year = people.stream().filter(person -> person.age() > 21).toList();
-        String allName = people.stream().map(p -> p.name()).collect(Collectors.joining());
+        String allName = people.stream().map(Person::name).collect(Collectors.joining());
         System.out.println(people21Year);
         System.out.println(allName);
     }

@@ -10,15 +10,18 @@ public class Stream1 {
     public static void main(String[] args) {
         List<String> words = Arrays.asList("bananas", "cherry", "apple");
 
-        Comparator<String> comparatorByAlphabet = ((o1, o2) -> {
+        /*Comparator<String> comparatorByAlphabet = ((o1, o2) -> {
             return o1.compareTo(o2);
         });
 
-        //words.sort(comparatorByAlphabet);
-        words.sort(Comparator.naturalOrder());
+        words.sort(comparatorByAlphabet);
+        *words.sort(Comparator.naturalOrder());
         words.forEach(System.out::println);
         words.sort(Comparator.comparingInt((o) -> o.length()));
         System.out.println("\n");
-        words.forEach(System.out::println);
+        words.forEach(System.out::println);*/
+
+        System.out.println("По алфавиту " + words.stream().sorted().toList());
+        System.out.println("По количеству символов " + words.stream().sorted(Comparator.comparingInt(w -> w.length())).toList());
     }
 }

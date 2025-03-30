@@ -19,11 +19,11 @@ public class Stream9 {
         }
         Instant timeStart = Instant.now();
         System.out.println("Сумма квадратов " + largeList.size() + " чисел равна = " +
-                largeList.parallelStream()
+                        largeList.parallelStream()
                         //.stream()
                         .map(a -> new BigInteger(String.valueOf(a)))
                         .map(bigA -> bigA.multiply(bigA))
-                        .reduce((a, b) -> a.add(b))
+                        .reduce(BigInteger::add)
                         .get());
         long secondsBetween = Duration.between(timeStart, Instant.now()).getSeconds();
         System.out.println("Длительность вычислений = " + secondsBetween + " секунд");

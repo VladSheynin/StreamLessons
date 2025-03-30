@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class Stream7 {
     public static void main(String[] args) {
         String csvString = "1,John,25;2,Alice,30;3,Bob, 24";

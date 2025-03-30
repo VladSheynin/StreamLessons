@@ -14,7 +14,7 @@ public class Stream11 {
         Stream<String> stream = listForStream.stream();
         List<Integer> intList = new ArrayList<>();
         intList = stream.filter((a) -> (!(a == null)&&(a.matches("\\d+"))))
-                .map(i -> Integer.parseInt(i))
+                .map(Integer::parseInt)
                 .toList();
         System.out.println(intList);
     }
