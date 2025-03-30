@@ -12,7 +12,9 @@ public class Stream4 {
         List<String> words = List.of("apple", "banana", "apricot", "cherry", "blueberry");
         Map<Character, String> map1 = words.stream().collect(Collectors.toMap(str -> (Character) str.charAt(0), str -> str, (oldValue, newValue) -> oldValue));
         Map<Character, List<String>> map2 = words.stream().collect(Collectors.toMap(str -> (Character) str.charAt(0), str -> words, (oldValue, newValue) -> oldValue));
+        Map<Character,List<String>> map3 = words.stream().collect(Collectors.groupingBy(word->word.charAt(0)));
         System.out.println(map1);
         System.out.println(map2);
+        System.out.println(map3);
     }
 }
