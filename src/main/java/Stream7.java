@@ -6,6 +6,7 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,8 @@ public class Stream7 {
                     return new Person(Integer.parseInt(str.substring(0, comma1).trim()),
                             str.substring(comma1 + 1, comma2).trim(),
                             Integer.parseInt(str.substring(comma2 + 1).trim()));
-                }).toList();
+                }).collect(Collectors.toCollection(LinkedList::new));
+        //toList();
         System.out.println(persons);
     }
 
